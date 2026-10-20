@@ -1,0 +1,17 @@
+node_modules/
+.wrangler/
+.dev.vars
+
+__pycache__/
+*.pyc
+
+.history/
+*-backups/
+fp-info-cache
+*.kicad_prl
+*.lck
+_autosave-*
+*.bak
+
+.DS_Store
+Thumbs.db

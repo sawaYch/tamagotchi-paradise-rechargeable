@@ -1,0 +1,17 @@
+(footprint "WirePads_1x01"
+	(version 20221018)
+	(generator "pcbnew")
+	(layer "F.Cu")
+	(descr "Single solder-wire pad")
+	(attr through_hole)
+	(fp_text reference "REF**" (at 0 -1.6) (layer "F.SilkS") hide
+		(effects (font (size 0.8 0.8) (thickness 0.12)))
+	)
+	(fp_text value "WirePads_1x01" (at 0 1.6) (layer "F.Fab") hide
+		(effects (font (size 0.8 0.8) (thickness 0.12)))
+	)
+	(fp_rect (start -0.9 -0.9) (end 0.9 0.9)
+		(stroke (width 0.05) (type solid)) (fill none) (layer "F.CrtYd")
+	)
+	(pad "1" thru_hole circle (at 0 0) (size 1.40 1.40) (drill 0.80) (layers "*.Cu" "*.Mask"))
+)
