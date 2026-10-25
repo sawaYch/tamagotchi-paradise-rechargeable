@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1100" width="100%" role="img" aria-labelledby="title desc">
+  <title id="title">Use-during-charge wiring</title>
+  <desc id="desc">Every module and hookup wire. Each cable uses its own lane and only touches the pad it solders to.</desc>
+
+  <rect width="1600" height="1100" fill="#f4f0e6"/>
+  <text x="800" y="34" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="24" font-weight="700" fill="#1c1c1c">Use-during-charge wiring</text>
+  <text x="800" y="56" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#444">Each numbered cable has its own lane. Lines only touch the pad they solder to. Connect the LiPo last.</text>
+
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12">
+    <rect x="1188" y="12" width="392" height="50" rx="8" fill="#fff" stroke="#cfc8b8"/>
+    <rect x="1202" y="26" width="26" height="8" rx="2" fill="#c62828"/><text x="1234" y="34" fill="#333">red USB / cell+ / VOUT</text>
+    <rect x="1408" y="26" width="26" height="8" rx="2" fill="#1565c0"/><text x="1440" y="34" fill="#333">blue BAT</text>
+    <rect x="1202" y="44" width="26" height="8" rx="2" fill="#ef6c00"/><text x="1234" y="52" fill="#333">orange VSYS</text>
+    <rect x="1408" y="44" width="26" height="8" rx="2" fill="#212121"/><text x="1440" y="52" fill="#333">black GND</text>
+  </g>
+
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+    <rect x="20" y="78" width="200" height="112" rx="12" fill="#eceff1" stroke="#546e7a" stroke-width="2"/>
+    <text x="120" y="104" text-anchor="middle" font-size="15" font-weight="700" fill="#37474f">902030 LiPo</text>
+    <text x="120" y="124" text-anchor="middle" font-size="12" fill="#607d8b">3.7 V  500 mAh  connect last</text>
+    <rect x="36" y="146" width="72" height="28" rx="5" fill="#c62828"/>
+    <text x="72" y="165" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">BAT+</text>
+    <rect x="132" y="146" width="72" height="28" rx="5" fill="#212121"/>
+    <text x="168" y="165" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">BAT-</text>
+  </g>
+
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+    <rect x="20" y="400" width="200" height="200" rx="12" fill="#fff" stroke="#222" stroke-width="1.8"/>
+    <text x="120" y="426" text-anchor="middle" font-size="15" font-weight="700" fill="#1c1c1c">USB-C socket</text>
+    <rect x="60" y="440" width="120" height="32" rx="9" fill="#263238"/>
+    <rect x="80" y="448" width="80" height="16" rx="5" fill="#111"/>
+    <rect x="36" y="492" width="76" height="32" rx="5" fill="#c62828"/>
+    <text x="74" y="513" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">VBUS</text>
+    <rect x="128" y="492" width="76" height="32" rx="5" fill="#212121"/>
+    <text x="166" y="513" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">GND</text>
+    <text x="120" y="578" text-anchor="middle" font-size="11" fill="#666">power pins only</text>
+  </g>
+
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+    <rect x="300" y="380" width="260" height="230" rx="12" fill="#fff3e0" stroke="#e65100" stroke-width="1.8"/>
+    <rect x="316" y="380" width="72" height="30" rx="5" fill="#c62828"/><text x="352" y="400" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">IN+</text>
+    <rect x="394" y="380" width="72" height="30" rx="5" fill="#c62828"/><text x="430" y="400" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">BAT+</text>
+    <rect x="472" y="380" width="72" height="30" rx="5" fill="#1565c0"/><text x="508" y="400" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">OUT+</text>
+    <circle cx="352" cy="428" r="6" fill="#e53935"/>
+    <circle cx="372" cy="428" r="6" fill="#1e88e5"/>
+    <text x="430" y="456" text-anchor="middle" font-size="15" font-weight="700" fill="#5d4037">TP4057 charger</text>
+    <text x="430" y="474" text-anchor="middle" font-size="11" fill="#8d6e63">match the labels on your board</text>
+    <rect x="316" y="580" width="72" height="30" rx="5" fill="#212121"/><text x="352" y="600" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">IN-</text>
+    <rect x="394" y="580" width="72" height="30" rx="5" fill="#212121"/><text x="430" y="600" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">BAT-</text>
+    <rect x="472" y="580" width="72" height="30" rx="5" fill="#212121"/><text x="508" y="600" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">OUT-</text>
+  </g>
+
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" transform="translate(660 360)">
+    <rect x="0" y="0" width="250" height="260" rx="12" fill="#14532d"/>
+    <text x="125" y="22" text-anchor="middle" font-size="13" font-weight="700" fill="#c8e6c9">power-path PCB  top</text>
+    <rect x="12" y="32" width="226" height="216" rx="4" fill="#2e7d32" stroke="#0d3b16" stroke-width="2"/>
+    <rect x="70" y="58" width="110" height="40" rx="5" fill="#cfd8dc" stroke="#37474f"/>
+    <rect x="70" y="58" width="18" height="40" rx="4" fill="#eceff1" stroke="#37474f"/>
+    <text x="131" y="76" text-anchor="middle" font-size="11" font-weight="700" fill="#263238">D1 SS14</text>
+    <text x="131" y="90" text-anchor="middle" font-size="10" fill="#546e7a">band left</text>
+    <rect x="72" y="126" width="50" height="40" rx="4" fill="#111"/>
+    <rect x="60" y="138" width="14" height="12" rx="2" fill="#c47b2b"/>
+    <rect x="120" y="130" width="14" height="12" rx="2" fill="#c47b2b"/>
+    <rect x="120" y="150" width="14" height="12" rx="2" fill="#c47b2b"/>
+    <text x="97" y="150" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">Q1</text>
+    <rect x="150" y="168" width="42" height="16" rx="2" fill="#d7ccc8" stroke="#5d4037"/>
+    <text x="171" y="180" text-anchor="middle" font-size="10" font-weight="700" fill="#3e2723">R1</text>
+    <g stroke="#4e342e" stroke-width="1.2">
+      <circle cx="36" cy="78" r="13" fill="#d4a017"/><circle cx="36" cy="78" r="5" fill="#f4f0e6"/>
+      <circle cx="214" cy="78" r="13" fill="#d4a017"/><circle cx="214" cy="78" r="5" fill="#f4f0e6"/>
+      <circle cx="36" cy="166" r="13" fill="#d4a017"/><circle cx="36" cy="166" r="5" fill="#f4f0e6"/>
+      <circle cx="214" cy="210" r="13" fill="#d4a017"/><circle cx="214" cy="210" r="5" fill="#f4f0e6"/>
+    </g>
+    <text x="36" y="56" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">VSYS</text>
+    <text x="214" y="56" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">VBUS</text>
+    <text x="36" y="196" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">BAT</text>
+    <text x="214" y="240" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">GND</text>
+  </g>
+
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+    <rect x="990" y="400" width="150" height="190" rx="12" fill="#fff" stroke="#222" stroke-width="1.8"/>
+    <text x="1065" y="426" text-anchor="middle" font-size="15" font-weight="700" fill="#1c1c1c">Slide switch</text>
+    <rect x="1024" y="444" width="82" height="24" rx="7" fill="#37474f"/>
+    <rect x="1064" y="448" width="24" height="16" rx="3" fill="#cfd8dc"/>
+    <circle cx="1022" cy="568" r="10" fill="#9e9e9e" stroke="#333"/>
+    <circle cx="1065" cy="568" r="10" fill="#ef6c00" stroke="#333"/>
+    <circle cx="1108" cy="568" r="10" fill="#ef6c00" stroke="#333"/>
+    <text x="1022" y="552" text-anchor="middle" font-size="11" fill="#888">nc</text>
+    <text x="1065" y="552" text-anchor="middle" font-size="12" font-weight="700" fill="#e65100">middle</text>
+    <text x="1108" y="552" text-anchor="middle" font-size="12" font-weight="700" fill="#e65100">right</text>
+  </g>
+
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+    <rect x="1220" y="380" width="140" height="220" rx="12" fill="#0d47a1" stroke="#0a3476" stroke-width="1.8"/>
+    <text x="1290" y="406" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">TPS63802</text>
+    <text x="1290" y="424" text-anchor="middle" font-size="11" fill="#bbdefb">buck-boost</text>
+    <rect x="1240" y="444" width="100" height="28" rx="5" fill="#ef6c00"/><text x="1290" y="463" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">VIN</text>
+    <rect x="1240" y="486" width="100" height="28" rx="5" fill="#212121"/><text x="1290" y="505" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">GND</text>
+    <rect x="1240" y="528" width="100" height="28" rx="5" fill="#c62828"/><text x="1290" y="547" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">VOUT</text>
+    <text x="1290" y="582" text-anchor="middle" font-size="11" fill="#bbdefb">3.0 V or 3.3 V</text>
+  </g>
+
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+    <rect x="1440" y="400" width="136" height="200" rx="12" fill="#fff" stroke="#222" stroke-width="1.8"/>
+    <text x="1508" y="426" text-anchor="middle" font-size="14" font-weight="700" fill="#1c1c1c">Host</text>
+    <text x="1508" y="444" text-anchor="middle" font-size="11" fill="#666">left springs P6 / P7</text>
+    <rect x="1464" y="464" width="88" height="30" rx="5" fill="#c62828"/><text x="1508" y="484" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">+</text>
+    <rect x="1464" y="516" width="88" height="30" rx="5" fill="#212121"/><text x="1508" y="536" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">-</text>
+    <text x="1508" y="578" text-anchor="middle" font-size="11" fill="#888">screen facing you</text>
+  </g>
+
+  <g fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M112 492 H210 V246 H874 V438" stroke="#c62828"/>
+    <path d="M352 246 V380" stroke="#c62828"/>
+  </g>
+  <circle cx="112" cy="492" r="4" fill="#c62828"/>
+  <circle cx="210" cy="246" r="4" fill="#c62828"/>
+  <circle cx="352" cy="246" r="5" fill="#c62828"/>
+  <circle cx="352" cy="380" r="4" fill="#c62828"/>
+  <circle cx="874" cy="246" r="4" fill="#c62828"/>
+  <circle cx="874" cy="438" r="4" fill="#c62828"/>
+  <circle cx="40" cy="246" r="10" fill="#c62828"/>
+  <text x="40" y="250" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#fff">1</text>
+  <text x="500" y="232" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#c62828">USB VBUS = TP4057 IN+ = PCB VBUS</text>
+
+  <path d="M72 174 V204 H430 V230 A16 16 0 0 1 430 262 V380" fill="none" stroke="#c62828" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="160" cy="204" r="10" fill="#c62828"/>
+  <text x="160" y="208" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#fff">4</text>
+  <text x="174" y="194" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#c62828">LiPo + to BAT+ (hops over VBUS)</text>
+
+  <path d="M168 174 V188 H16 V640 H430 V610" fill="none" stroke="#212121" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="16" cy="330" r="10" fill="#212121"/>
+  <text x="16" y="334" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#fff">5</text>
+  <text x="30" y="300" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#212121">LiPo - to BAT-</text>
+
+  <path d="M544 395 H588 V526 H696" fill="none" stroke="#1565c0" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="588" cy="502" r="10" fill="#1565c0"/>
+  <text x="588" y="506" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#fff">3</text>
+  <text x="560" y="454" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#1565c0">OUT+ to BAT</text>
+
+  <path d="M696 438 H620 V668 H1065 V568" fill="none" stroke="#ef6c00" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="860" cy="668" r="10" fill="#ef6c00"/>
+  <text x="860" y="672" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#fff">6</text>
+  <text x="880" y="658" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#e65100">VSYS to switch middle</text>
+
+  <path d="M1108 568 H1168 V458 H1240" fill="none" stroke="#ef6c00" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="1168" cy="480" r="10" fill="#ef6c00"/>
+  <text x="1168" y="484" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#fff">7</text>
+  <text x="1148" y="430" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#e65100">right to VIN</text>
+
+  <path d="M1340 542 H1392 V479 H1464" fill="none" stroke="#c62828" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="1392" cy="510" r="10" fill="#c62828"/>
+  <text x="1392" y="514" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#fff">8</text>
+  <text x="1360" y="580" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#c62828">VOUT to host +</text>
+
+  <path d="M204 508 H260 V595 H316" fill="none" stroke="#212121" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="204" cy="508" r="4" fill="#212121"/>
+  <circle cx="316" cy="595" r="4" fill="#212121"/>
+  <circle cx="260" cy="550" r="10" fill="#212121"/>
+  <text x="260" y="554" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#fff">2</text>
+  <text x="268" y="536" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#212121">USB GND to IN-</text>
+
+  <path d="M508 610 V700 H830 V684 A16 16 0 0 0 830 652 V570 H874" fill="none" stroke="#212121" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="508" cy="610" r="4" fill="#212121"/>
+  <circle cx="874" cy="570" r="4" fill="#212121"/>
+  <circle cx="700" cy="700" r="10" fill="#212121"/>
+  <text x="700" y="704" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#fff">9</text>
+  <text x="718" y="734" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#212121">OUT- to PCB GND (hops over VSYS)</text>
+
+  <path d="M874 570 H940 V652 A16 16 0 0 1 940 684 V720 H1200 V500 H1240" fill="none" stroke="#212121" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="1240" cy="500" r="4" fill="#212121"/>
+  <circle cx="1080" cy="720" r="10" fill="#212121"/>
+  <text x="1080" y="724" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#fff">10</text>
+  <text x="1098" y="744" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#212121">PCB GND to TPS GND</text>
+
+  <path d="M1340 500 H1416 V531 H1464" fill="none" stroke="#212121" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="1340" cy="500" r="4" fill="#212121"/>
+  <circle cx="1464" cy="531" r="4" fill="#212121"/>
+  <circle cx="1416" cy="560" r="10" fill="#212121"/>
+  <text x="1416" y="564" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#fff">11</text>
+  <text x="1320" y="600" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#212121">TPS GND to host -</text>
+
+  <rect x="20" y="770" width="1560" height="310" rx="10" fill="#fff" stroke="#d4cdb8"/>
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" fill="#222">
+    <text x="40" y="800" font-size="15" font-weight="700">Cable list  (solder 1 to 3, then 6 to 11, then 4 and 5 last)</text>
+    <text x="40" y="832"><tspan font-weight="700" fill="#c62828">1</tspan>  USB VBUS  to  TP4057 IN+  to  PCB VBUS</text>
+    <text x="40" y="860"><tspan font-weight="700">2</tspan>  USB GND  to  TP4057 IN-</text>
+    <text x="40" y="888"><tspan font-weight="700" fill="#1565c0">3</tspan>  TP4057 OUT+  to  PCB BAT</text>
+    <text x="40" y="916"><tspan font-weight="700" fill="#c62828">4</tspan>  LiPo +  to  TP4057 BAT+</text>
+    <text x="40" y="944"><tspan font-weight="700">5</tspan>  LiPo -  to  TP4057 BAT-</text>
+    <text x="40" y="972"><tspan font-weight="700" fill="#ef6c00">6</tspan>  PCB VSYS  to  switch middle     <tspan font-weight="700" fill="#ef6c00">7</tspan>  switch right  to  TPS VIN     <tspan font-weight="700" fill="#c62828">8</tspan>  TPS VOUT  to  host +</text>
+    <text x="40" y="1000"><tspan font-weight="700">9</tspan>  TP4057 OUT-  to  PCB GND     <tspan font-weight="700">10</tspan>  PCB GND  to  TPS63802 GND     <tspan font-weight="700">11</tspan>  TPS63802 GND  to  host -</text>
+    <text x="40" y="1036" font-size="13" fill="#555">GND is a chain, not one rail: USB GND to IN-, OUT- to PCB GND, PCB GND to TPS GND, TPS GND to host -.</text>
+    <text x="40" y="1064" font-size="13" fill="#555">Host + / - are the leftover left springs. PCB GND is required so R1 can pull the FET gate down.</text>
+  </g>
+</svg>

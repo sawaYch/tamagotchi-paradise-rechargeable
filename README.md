@@ -70,6 +70,26 @@ flowchart TB
   BGND --> TAMA
 ```
 
+#### Simple soldering map
+
+Hold each module **silk / labels up**. Thick lines in the drawing are the hookup wires; dots are solder joints. There is **no** power-path PCB on this version.
+
+![Simple wiring](docs/simple-solder.svg)
+
+Solder **1 → 3**, then **6 → 9**, then the LiPo (**4** and **5**) last.
+
+1. Red: USB **VBUS** → TP4057 **IN+**
+2. Black: USB **GND** → TP4057 **IN−**
+3. Orange: TP4057 **OUT+** → switch **middle**
+4. Red: LiPo **+** → TP4057 **BAT+**
+5. Black: LiPo **−** → TP4057 **BAT−**
+6. Orange: switch **right** → TPS63802 **VIN**
+7. Red: TPS63802 **VOUT** → host **+**
+8. Black: TP4057 **OUT−** → TPS63802 **GND**
+9. Black: TPS63802 **GND** → host **−**
+
+Ground is a chain (same net, three wires), not one shared rail. Host **+** / **−** are the leftover left-side springs (P6 / P7), screen facing you. Charge with the device **off**.
+
 ### Use-during-charge circuit
 
 Two paths feed a shared **VSYS** node:
@@ -83,57 +103,39 @@ When USB is present, **VBUS pulls the P-MOSFET gate high**, so the FET turns **o
 
 ```mermaid
 flowchart TB
-  subgraph USB["USB Type-C female"]
-    VBUS["VBUS (red)"]
-    UGND["GND (black)"]
+  subgraph charge["Charge"]
+    direction LR
+    USB["USB Type-C<br/>VBUS / GND"]
+    CHG["TP4057<br/>IN / BAT / OUT"]
+    CELL["902030 LiPo<br/>500 mAh"]
+    USB -->|"VBUS to IN+<br/>GND to IN-"| CHG
+    CHG <-->|"BAT+ / BAT-"| CELL
   end
 
-  subgraph CHG["TP4057 charging module"]
-    INP["IN+"]
-    INN["IN−"]
-    BATP["BAT+"]
-    BATN["BAT−"]
-    OUTP["OUT+ (battery node)"]
-    OUTN["OUT−"]
+  subgraph path["Power-path PCB  -  pads VBUS / BAT / VSYS / GND"]
+    direction LR
+    D1["D1 SS14<br/>USB: VBUS to VSYS"]
+    Q1["Q1 AO3401A<br/>battery: OUT+ to VSYS<br/>gate from VBUS<br/>R1 100 k to GND"]
+    VSYS(("VSYS"))
+    D1 --> VSYS
+    Q1 --> VSYS
   end
 
-  BAT["902030 LiPo<br/>500 mAh"]
-
-  subgraph PATH["Power-path switch"]
-    R1["R1 100 kΩ<br/>Gate pull-down to GND"]
-    Q1["Q1 AO3401A P-MOSFET<br/>D ← battery · S → VSYS · G ← VBUS"]
-    D1["D1 SS14 Schottky<br/>USB power path"]
+  subgraph out["Output"]
+    direction LR
+    SW["Slide switch<br/>middle / right"]
+    REG["TPS63802<br/>VIN to VOUT<br/>3.0 V / 3.3 V"]
+    HOST["Host + / -"]
+    SW -->|right to VIN| REG
+    REG -->|VOUT| HOST
+    REG -->|GND| HOST
   end
 
-  VSYS(("VSYS<br/>system power node"))
-
-  SW["Toggle / slide switch<br/>(modified 2-pin)<br/>middle ← VSYS · right → VIN"]
-
-  subgraph REG["TPS63802 Mini buck-boost"]
-    VIN["VIN"]
-    RGND["GND"]
-    VOUT["VOUT 3.0 V / 3.3 V"]
-    BGND["GND"]
-  end
-
-  TAMA["Tamagotchi Paradise<br/>host + wireless adapter<br/>+ / −"]
-
-  VBUS -->|red → IN+| INP
-  UGND -->|black → IN−| INN
-  BATP --> BAT
-  BATN --> BAT
-  OUTP -->|battery power path| Q1
-  Q1 --> VSYS
-  VBUS -->|USB power path| D1
-  D1 --> VSYS
-  VBUS --> Q1
-  Q1 -.->|Gate| R1
-  R1 --> OUTN
-  OUTN --> RGND
-  VSYS --> SW
-  SW -->|right pin| VIN
-  VOUT --> TAMA
-  BGND --> TAMA
+  USB -->|VBUS| D1
+  CHG -->|OUT+| Q1
+  VSYS -->|middle| SW
+  CHG -->|OUT- to PCB GND| path
+  path -->|PCB GND to TPS GND| REG
 ```
 
 #### Power-path truth table
@@ -144,6 +146,28 @@ flowchart TB
 | No (gate pulled down by R1) | **On**                 | LiPo via **Q1**     | Discharging into VSYS      |
 
 Optional PCB for the power-path block only: see [`tama_power_path/`](tama_power_path/) (14×10 mm, pads `VBUS` / `BAT` / `VSYS` / `GND`).
+
+#### Use-during-charge soldering map
+
+Hold the assembled 14×10 mm board **silk up**. Thick lines in the drawing are the hookup wires; dots are solder joints. Match the pad names printed on your TP4057 / TPS63802 modules.
+
+![Use-during-charge wiring](docs/use-during-charge-solder.svg)
+
+Solder **1 → 3**, then **6 → 11**, then the LiPo (**4** and **5**) last.
+
+1. Red: USB **VBUS** = PCB **VBUS** = TP4057 **IN+**
+2. Black: USB **GND** → TP4057 **IN−**
+3. Blue: TP4057 **OUT+** → PCB **BAT**
+4. Red: LiPo **+** → TP4057 **BAT+**
+5. Black: LiPo **−** → TP4057 **BAT−**
+6. Orange: PCB **VSYS** → switch **middle**
+7. Orange: switch **right** → TPS63802 **VIN**
+8. Red: TPS63802 **VOUT** → host **+**
+9. Black: TP4057 **OUT−** → PCB **GND**
+10. Black: PCB **GND** → TPS63802 **GND**
+11. Black: TPS63802 **GND** → host **−**
+
+Ground is a chain (same net, four wires), not one shared rail. PCB **GND** is required so **R1** can pull the FET gate down. Host **+** / **−** are the leftover left-side springs (P6 / P7), screen facing you.
 
 ---
 
@@ -226,9 +250,9 @@ Gerbers / CPL / BOM for the tiny power-path PCB: [`tama_power_path/fab/`](tama_p
 ## Repository layout
 
 ```
-docs/                     Photos + original wiring diagrams
-  simple.png
-  use-during-charge.png
+docs/                     Photos + soldering maps
+  simple-solder.svg
+  use-during-charge-solder.svg
 tama_power_path/          KiCad project for the dual power-path PCB
   fab/                    Gerbers, BOM, CPL for ordering
 ```
